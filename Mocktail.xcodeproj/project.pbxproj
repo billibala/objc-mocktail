@@ -15,6 +15,14 @@
 		A822634916C45BC4007C81BC /* Mocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = A822634816C45BC4007C81BC /* Mocktail.m */; };
 		A822635016C45D9E007C81BC /* Mocktail.h in Headers */ = {isa = PBXBuildFile; fileRef = A822634616C45BC4007C81BC /* Mocktail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A87D2F2316F3B6B700B594D6 /* Mocktail_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = A87D2F2216F3B6B700B594D6 /* Mocktail_Private.h */; settings = {ATTRIBUTES = (); }; };
+		A9DFC67018CCD5B500CA890A /* Mocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = A822634816C45BC4007C81BC /* Mocktail.m */; };
+		A9DFC67118CCD5B500CA890A /* MocktailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F1B1EF16EE98EF00D05B96 /* MocktailResponse.m */; };
+		A9DFC67218CCD5B500CA890A /* MocktailURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F1B1F116EE98EF00D05B96 /* MocktailURLProtocol.m */; };
+		A9DFC67318CCD5D100CA890A /* Mocktail.h in Headers */ = {isa = PBXBuildFile; fileRef = A822634616C45BC4007C81BC /* Mocktail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9DFC67418CCD5DB00CA890A /* Mocktail_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = A87D2F2216F3B6B700B594D6 /* Mocktail_Private.h */; };
+		A9DFC67518CCD5DD00CA890A /* MocktailResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F1B1EE16EE98EF00D05B96 /* MocktailResponse.h */; };
+		A9DFC67618CCD5DF00CA890A /* MocktailURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F1B1F016EE98EF00D05B96 /* MocktailURLProtocol.h */; };
+		A9DFC67818CCD5F000CA890A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DFC67718CCD5F000CA890A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,8 @@
 		A822634616C45BC4007C81BC /* Mocktail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mocktail.h; sourceTree = "<group>"; };
 		A822634816C45BC4007C81BC /* Mocktail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mocktail.m; sourceTree = "<group>"; };
 		A87D2F2216F3B6B700B594D6 /* Mocktail_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mocktail_Private.h; sourceTree = "<group>"; };
+		A9DFC66C18CCD58900CA890A /* libMacktailMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMacktailMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9DFC67718CCD5F000CA890A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A822634216C45BC4007C81BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9DFC66918CCD58900CA890A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9DFC67818CCD5F000CA890A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				A822633E16C45BC4007C81BC /* libMocktail.a */,
+				A9DFC66C18CCD58900CA890A /* libMacktailMac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +81,7 @@
 		A822634016C45BC4007C81BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9DFC67718CCD5F000CA890A /* Foundation.framework */,
 				A822634116C45BC4007C81BC /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -104,6 +124,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9DFC66A18CCD58900CA890A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9DFC67318CCD5D100CA890A /* Mocktail.h in Headers */,
+				A9DFC67418CCD5DB00CA890A /* Mocktail_Private.h in Headers */,
+				A9DFC67518CCD5DD00CA890A /* MocktailResponse.h in Headers */,
+				A9DFC67618CCD5DF00CA890A /* MocktailURLProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXLegacyTarget section */
@@ -141,6 +172,23 @@
 			productReference = A822633E16C45BC4007C81BC /* libMocktail.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		A9DFC66B18CCD58900CA890A /* MacktailMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9DFC66F18CCD58900CA890A /* Build configuration list for PBXNativeTarget "MacktailMac" */;
+			buildPhases = (
+				A9DFC66A18CCD58900CA890A /* Headers */,
+				A9DFC66818CCD58900CA890A /* Sources */,
+				A9DFC66918CCD58900CA890A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacktailMac;
+			productName = MacktailMac;
+			productReference = A9DFC66C18CCD58900CA890A /* libMacktailMac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,6 +212,7 @@
 			targets = (
 				A822633D16C45BC4007C81BC /* Mocktail */,
 				A87D2F2416F3C51000B594D6 /* Mocktail Documentation */,
+				A9DFC66B18CCD58900CA890A /* MacktailMac */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +225,16 @@
 				A822634916C45BC4007C81BC /* Mocktail.m in Sources */,
 				39F1B1F316EE98EF00D05B96 /* MocktailResponse.m in Sources */,
 				39F1B1F516EE98EF00D05B96 /* MocktailURLProtocol.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9DFC66818CCD58900CA890A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9DFC67018CCD5B500CA890A /* Mocktail.m in Sources */,
+				A9DFC67118CCD5B500CA890A /* MocktailResponse.m in Sources */,
+				A9DFC67218CCD5B500CA890A /* MocktailURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +349,53 @@
 			};
 			name = Release;
 		};
+		A9DFC66D18CCD58900CA890A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A9DFC66E18CCD58900CA890A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +425,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A9DFC66F18CCD58900CA890A /* Build configuration list for PBXNativeTarget "MacktailMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9DFC66D18CCD58900CA890A /* Debug */,
+				A9DFC66E18CCD58900CA890A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
