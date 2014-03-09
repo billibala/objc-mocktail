@@ -180,7 +180,8 @@ static NSMutableSet *_allMocktails;
     NSString *headerMatter = nil;
     [scanner scanUpToString:@"\n\n" intoString:&headerMatter];
     NSArray *lines = [headerMatter componentsSeparatedByString:@"\n"];
-    if ([lines count] < 4) {
+    NSInteger lineCount = lines.count;
+    if (lineCount < 4) {
         NSLog(@"Invalid amount of lines: %u", (unsigned)[lines count]);
         return;
     }
@@ -190,7 +191,14 @@ static NSMutableSet *_allMocktails;
     response.methodRegex = [NSRegularExpression regularExpressionWithPattern:lines[0] options:NSRegularExpressionCaseInsensitive error:nil];
     response.absoluteURLRegex = [NSRegularExpression regularExpressionWithPattern:lines[1] options:NSRegularExpressionCaseInsensitive error:nil];
     response.statusCode = [lines[2] integerValue];
-    response.headers = @{@"Content-Type":lines[3]};
+    NSMutableDictionary * headerDict = [NSMutableDictionary dictionaryWithObject:lines[3] forKey:@"Content-Type"];
+    response.headers = headerDict;
+    // if there's other line...
+    for (NSInteger i = 4; i < lineCount; i++) {
+        NSString * headerStr = lines[i];
+        NSArray * ay = [headerStr componentsSeparatedByString:@":"];
+        headerDict[[ay[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]] = [ay[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
     response.fileURL = url;
     response.bodyOffset = [headerMatter dataUsingEncoding:originalEncoding].length + 2;
     
